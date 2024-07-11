@@ -1,0 +1,28 @@
+:root {
+    --fpt-blue: rgb(5, 81, 160);
+    --fpt-orange: rgb(234, 109, 34);
+    --fpt-green: rgb(78, 177, 70);
+}
+
+.bg-fpt-blue {
+    background-color: var(--fpt-blue);
+}
+
+.bg-fpt-orange {
+    background-color: var(--fpt-orange);
+}
+
+.bg-fpt-green {
+    background-color: var(--fpt-green);
+}
+
+.my-shadow {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.separator {
+    border-style: dashed;
+    border-width: 1px;
+    border-color: grey;
+    margin: 1rem 0;
+}
