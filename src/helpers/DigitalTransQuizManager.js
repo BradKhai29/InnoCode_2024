@@ -22,7 +22,11 @@ class DigitalTransQuizManager {
     }
 
     isQuestionAnswered(questionId) {
-        return questions[questionId];
+        return questions[questionId].isAnswered;
+    }
+
+    setQuestionAnswer(questionId) {
+        questions[questionId].isAnswered = true;
     }
 }
 

@@ -53,8 +53,8 @@
                         ></button>
                     </div>
                     <div class="modal-body d-flex justify-content-center gap-3">
-                        <FLetter />
-                        <ELetter />
+                        <FLetter :collected="getF"/>
+                        <ELetter :collected="getE"/>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
@@ -113,6 +113,8 @@
 import BaseLayout from "@/layouts/BaseLayout.vue";
 import FLetter from "@/components/shared/game_secrets/F_Letter.vue";
 import ELetter from "@/components/shared/game_secrets/E_Letter.vue";
+import itemBagManager, { itemsToAchieve } from "@/helpers/ItemBagManager";
+
 
 export default {
     components: {
@@ -120,6 +122,16 @@ export default {
         ELetter,
         BaseLayout,
     },
+    data() {
+        return {
+            getF: false,
+            getE: false,
+        }
+    },
+    mounted() {
+        this.getF = itemBagManager.isAchievedById(itemsToAchieve.FLetter.itemId);
+        this.getE = itemBagManager.isAchievedById(itemsToAchieve.ELetter.itemId);
+    }
 };
 </script>
 

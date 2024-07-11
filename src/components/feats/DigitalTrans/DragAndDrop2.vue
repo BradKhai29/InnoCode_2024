@@ -19,12 +19,6 @@ export default {
             return;
         }
 
-        this.dragAndDropElement.addEventListener("mousedown", () => {
-            this.dragAndDropElement.classList.add("drag-and-drop-container");
-        });
-        this.dragAndDropElement.addEventListener("mouseup", () => {
-            this.dragAndDropElement.classList.add("drag-and-drop-container");
-        });
         this.setUpDragAndDrop(this.dragAndDropElement);
     },
     props: {
@@ -58,7 +52,6 @@ export default {
             event.dataTransfer.setData("elementId", this.elementIdRef);
         },
         handleDragEnd() {
-            this.dragAndDropElement.classList.remove("drag-and-drop-container");
             this.dragAndDropElement.classList.remove("hide");
         },
     },
@@ -66,13 +59,8 @@ export default {
 </script>
 
 <style scoped>
-.drag-and-drop-container {
-    position: absolute;
-    z-index: 9;
-}
-
 .hide {
     transition: 0.01s;
-    display: none;
+    opacity: 0;
 }
 </style>
